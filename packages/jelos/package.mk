@@ -98,7 +98,6 @@ EOF
 
   ### PortMaster
   cp ./portmaster ${INSTALL}/storage/roms/ports/.portmaster
-  chmod +x ${INSTALL}/storage/roms/ports/.portmaster/PortMaster.sh
 cat <<EOF >/storage/roms/ports/PortMaster.sh
 #!/bin/bash
 /storage/roms/ports/.portmaster/PortMaster.sh
