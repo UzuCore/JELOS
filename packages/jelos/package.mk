@@ -95,12 +95,4 @@ EOF
   then
     sed -i "s#system.automount=1#system.automount=0#g" ${INSTALL}/usr/config/system/configs/system.cfg
   fi
-
-  ### PortMaster
-  cp ./portmaster ${INSTALL}/storage/roms/ports/.portmaster
-cat <<EOF >/storage/roms/ports/PortMaster.sh
-#!/bin/bash
-/storage/roms/ports/.portmaster/PortMaster.sh
-EOF
-
 }
