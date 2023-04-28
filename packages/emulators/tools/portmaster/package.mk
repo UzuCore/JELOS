@@ -1,6 +1,6 @@
 #UzuCore
 
-PKG_NAME="port-master"
+PKG_NAME="portmaster"
 PKG_ARCH="any"
 PKG_LICENSE="CUSTOM"
 PKG_URL="https://github.com/christianhaitian/PortMaster/raw/main/PortMaster.zip"
