@@ -8,6 +8,7 @@ PKG_SECTION="virtual"
 PKG_LONGDESC="Game support software metapackage."
 
 PKG_GAMESUPPORT="sixaxis gptokeyb jstest-sdl gamecontrollerdb sdljoytest control-gen"
+PKG_GAMESUPPORT+=" port-master"
 
 PKG_DEPENDS_TARGET="${PKG_GAMESUPPORT}"
 
