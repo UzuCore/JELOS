@@ -9,7 +9,6 @@ PKG_LONGDESC="Emulation metapackage."
 
 PKG_EMUS="duckstation-sa flycast-sa hatarisa hypseus-singe hypseus-singe moonlight openbor pico-8 ppsspp-sa
           scummvmsa vice-sa"
-PKG_EMUS+= " portmaster"
 
 PKG_RETROARCH="core-info libretro-database retroarch retroarch-assets retroarch-joypads retroarch-overlays     \
               slang-shaders"
