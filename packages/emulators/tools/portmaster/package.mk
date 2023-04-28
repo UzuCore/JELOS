@@ -8,8 +8,8 @@ PKG_SHORTDESC="PortMaster"
 PKG_LONGDESC="PortMaster by christianhaitian"
 PKG_TOOLCHAIN="manual"
 
-post_install() {
+makeinstall_target() {
   mkdir -p ${INSTALL}/storage/portmaster
-  cp * ${INSTALL}/storage/portmaster
+  cp -rf * ${INSTALL}/storage/portmaster
   ln -s ${INSTALL}/storage/portmaster ${INSTALL}/storage/roms/ports
 }
