@@ -11,4 +11,3 @@ PKG_TOOLCHAIN="manual"
 makeinstall_target() {
   #test
 }
-
