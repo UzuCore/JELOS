@@ -16,6 +16,6 @@ unpack() {
 
 makeinstall_target() {
   mkdir -p ${INSTALL}/usr/share/portmaster
-  cp -rf ${PKG_BUILD}/* ${INSTALL}/usr/share/portmaster
-  #ln -s ${INSTALL}/usr/share/portmaster ${INSTALL}/storage/roms/ports
+  cp -rf ${PKG_BUILD}/portmaster ${INSTALL}/usr/share/
+  ln -sf /storage/roms/ports ${INSTALL}/usr/share/portmaster
 }
