@@ -42,9 +42,9 @@ then
   set_setting system.cpugovernor schedutil
 fi
 
+### PortMaster
 if [ ! -d "/storage/roms/ports/portmaster" ]
 then
-  ln -s /usr/share/portmaster /storage/roms/ports/portmaster  >/dev/null 2>&1
+  cp -rf /usr/share/portmaster /storage/roms/ports/portmaster >/var/log/upgrade.log 2>&1
 fi
 
-touch /storage/test.test
