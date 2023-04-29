@@ -14,8 +14,7 @@ unpack() {
   unzip ${SOURCES}/portmaster/portmaster-${PKG_VERSION}.zip -d ${PKG_BUILD}/
 }
 
-makeinstall_target() {
-  mkdir -p ${INSTALL}/usr/share/portmaster
-  cp -rf ${PKG_BUILD}/PortMaster/* ${INSTALL}/usr/share/portmaster
-  #ln -sf ${INSTALL}/usr/share/portmaster ${INSTALL}/storage/roms/ports
+post_makeinstall_target() {
+  mkdir -p ${INSTALL}/storage/portmaster
+  cp -rf ${PKG_BUILD}/PortMaster/* ${INSTALL}/storage/portmaster
 }
