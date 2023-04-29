@@ -42,8 +42,9 @@ then
   set_setting system.cpugovernor schedutil
 fi
 
-PORTMASTER_DIR="/storage/roms/ports/portmaster"
-if [ ! -d "${PORTMASTER_DIR}" ]
+if [ ! -d "/storage/roms/ports/portmaster" ]
 then
-  ln -s /usr/share/portmaster "${PORTMASTER_DIR}"  >/dev/null 2>&1
+  ln -s /usr/share/portmaster /storage/roms/ports/portmaster  >/dev/null 2>&1
 fi
+
+touch /storage/test.test
