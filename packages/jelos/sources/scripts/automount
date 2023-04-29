@@ -26,7 +26,6 @@ mount_games() {
         log $0 "Mounting ${1} on /storage/roms"
         mount ${1} /storage/roms >/dev/null 2>&1
         /usr/bin/systemd-tmpfiles --create /usr/lib/tmpfiles.d/jelos-dirs.conf >/dev/null 2>&1
-	ln -s /usr/share/portmaster /storage/roms/ports/portmaster  >/dev/null 2>&1
       fi
 }
 
@@ -70,6 +69,7 @@ find_games() {
 if [ -e "${GAMES_DEVICE}" ]
 then
   mount_games ${GAMES_DEVICE}
+  ln -s /usr/share/portmaster /storage/roms/ports/portmaster  >/dev/null 2>&1
 else
   find_games
 fi
