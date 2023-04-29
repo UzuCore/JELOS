@@ -1,0 +1,12 @@
+#!/bin/bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2021-present Fewtarius (https://github.com/fewtarius)
+
+. /etc/profile
+
+tocon "Setting portmaster..."
+
+if [ ! -d "/storage/roms/ports/portmaster" ]
+then
+  ln -s /usr/share/portmaster /storage/roms/ports/portmaster  >/dev/null 2>&1
+fi
