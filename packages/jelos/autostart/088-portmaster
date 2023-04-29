@@ -5,6 +5,7 @@
 . /etc/profile
 
 tocon "Setting portmaster..."
+sleep 10
 
 if [ ! -d "/storage/roms/ports/portmaster" ]
 then
