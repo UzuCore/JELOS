@@ -2,12 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (C) 2021-present Fewtarius (https://github.com/fewtarius)
 
-. /etc/profile
-
-tocon "Setting portmaster..."
-sleep 10
-
-if [ ! -d "/storage/roms/ports/portmaster" ]
+PORTMASTER_DIR="/storage/roms/ports/portmaster"
+if [ ! -d "${PORTMASTER_DIR}" ]
 then
-  ln -s /usr/share/portmaster /storage/roms/ports/portmaster  >/dev/null 2>&1
+  ln -s /usr/share/portmaster "${PORTMASTER_DIR}"  >/dev/null 2>&1
 fi
+
+touch /storage/test.test
