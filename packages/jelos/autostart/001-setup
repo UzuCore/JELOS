@@ -43,7 +43,7 @@ then
 fi
 
 ### PortMaster
-if [ ! -d "/storage/roms/ports/portmaster" ]
+if [ ! -d "/storage/roms/ports/PortMaster" ]
 then
   cp -rf /usr/share/portmaster /storage/roms/ports/PortMaster >/var/log/upgrade.log 2>&1
 fi
