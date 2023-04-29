@@ -11,8 +11,20 @@ PKG_TOOLCHAIN="make"
 PKG_BUILD_FLAGS="-gold"
 PKG_PATCH_DIRS+="${DEVICE}"
 
+if [ ! "${OPENGL}" = "no" ]; then
+  PKG_DEPENDS_TARGET+=" ${OPENGL} glu libglvnd"
+fi
+
+if [ "${OPENGLES_SUPPORT}" = yes ]; then
+  PKG_DEPENDS_TARGET+=" ${OPENGLES}"
+fi
+
 pre_configure_target() {
   sed -i 's/define CORE_OPTION_NAME "reicast"/define CORE_OPTION_NAME "flycast2021"/g' core/libretro/libretro_core_option_defines.h
+}
+
+pre_make_target() {
+  export BUILD_SYSROOT=${SYSROOT_PREFIX}
 }
 
 makeinstall_target() {
