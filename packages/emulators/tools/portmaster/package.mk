@@ -16,5 +16,5 @@ unpack() {
 
 makeinstall_target() {
   mkdir -p ${INSTALL}/usr/share/portmaster
-  cp -rf ${PKG_BUILD}/PortMaster/* ${INSTALL}/usr/share/portmaster
+  cp -rf ${PKG_BUILD}/PortMaster/. ${INSTALL}/usr/share/portmaster
 }
