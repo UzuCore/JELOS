@@ -46,5 +46,6 @@ fi
 if [ ! -d "/storage/roms/ports/PortMaster" ]
 then
   cp -rf /usr/share/portmaster /storage/roms/ports/PortMaster >/var/log/upgrade.log 2>&1
+  chmod -R 755 /storage/roms/ports/PortMaster
 fi
 
