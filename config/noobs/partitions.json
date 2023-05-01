@@ -10,7 +10,7 @@
     },
     {
       "label":                     "Storage",
-      "filesystem_type":           "FAT",
+      "filesystem_type":           "ext4",
       "partition_size_nominal":    1024,
       "want_maximised":            true,
       "uncompressed_tarball_size": 10,
