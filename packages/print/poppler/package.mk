@@ -4,10 +4,10 @@
 # Copyright (C) 2020-present Fewtarius
 
 PKG_NAME="poppler"
-PKG_VERSION="12853d2"
+PKG_VERSION="22.08.0"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/freedesktop/poppler"
-PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
+PKG_SITE="https://gitlab.freedesktop.org/poppler/poppler"
+PKG_URL="$PKG_SITE/-/archive/poppler-$PKG_VERSION/poppler-poppler-$PKG_VERSION.tar.gz"
 PKG_DEPENDS_TARGET="toolchain zlib libpng libjpeg-turbo fontconfig boost"
 PKG_LONGDESC="This is Poppler, a library for rendering PDF files, and examining or modifying their structure."
 PKG_TOOLCHAIN="cmake"
