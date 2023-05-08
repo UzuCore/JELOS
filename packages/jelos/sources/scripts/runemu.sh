@@ -210,7 +210,13 @@ function quit() {
 	DEVICE_CPU_GOVERNOR=$(get_setting system.cpugovernor)
 	${DEVICE_CPU_GOVERNOR}
 	set_audio default
+	stop_rumble
 	exit $1
+}
+
+function stop_rumble() {
+	$VERBOSE && log $0 "Stop rumble"
+	echo 1000000 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
 }
 
 function clear_screen() {
