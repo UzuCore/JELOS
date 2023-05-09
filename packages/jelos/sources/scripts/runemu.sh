@@ -215,9 +215,13 @@ function quit() {
 }
 
 function stop_rumble() {
-	$VERBOSE && log $0 "Stop rumble"
-	echo 1000000 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
+	if [[ "${HW_DEVICE}" == RK3356 ]]
+	then
+		$VERBOSE && log $0 "Stop rumble"
+		echo 1000000 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
+	fi
 }
+
 
 function clear_screen() {
 	$VERBOSE && log $0 "Clearing screen"
