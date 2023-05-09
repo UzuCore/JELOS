@@ -18,12 +18,12 @@ diff -rupN flycast2021.orig/core/libretro/libretro.cpp flycast2021/core/libretro
 +           system("echo 10 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle && sleep 0.4 && echo 1000000 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle &");
 +           INC = 0;}
 +     fclose(file);
-+   } else if ((file = fopen("/sys/class/pwm/pwmchip1/pwm0/enable", "r"))) {
++   } else if ((file = fopen("/sys/class/pwm/pwmchip1/pwm0/duty_cycle", "r"))) {
 +     if (value <= 1000000){                    // INH
-+           system("echo 1 | sudo tee /sys/class/pwm/pwmchip1/pwm0/enable");
++           system("echo 1000000 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle");
 +           INC = -INC;}
 +     else {    // EXH
-+           system("echo 0 | sudo tee /sys/class/pwm/pwmchip1/pwm0/enable && sleep 0.4 && echo 1 | sudo tee /sys/class/pwm/pwmchip1/pwm0/enable &");
++           system("echo 10 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle && sleep 0.4 && echo 1000000 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle &");
 +           INC = 0;}
 +     fclose(file);
 +   } else {
