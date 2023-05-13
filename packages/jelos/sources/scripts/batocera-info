@@ -1,1 +1,133 @@
-jelos-info
+#!/bin/bash
+
+source /etc/profile
+
+### short version (for osd)
+if test "$1" = "--short"
+then
+    BATT=$(cat /sys/class/power_supply/{BAT,bat}*/uevent 2>/dev/null | grep -E "^POWER_SUPPLY_CAPACITY=" | sed -e s+'^POWER_SUPPLY_CAPACITY='++ | sort -rn | head -1)
+    DT=$(date +%H:%M)
+    if test -n "${BATT}"
+    then
+	echo "Battery: ${BATT}% - ${DT}"
+    else
+	echo "${DT}"
+    fi
+    exit 0
+fi
+###
+
+V_CPUNB=$(grep -E $'^processor\t:' /proc/cpuinfo | wc -l)
+V_CPUMODEL1=$(grep -E $'^model name\t:' /proc/cpuinfo | head -1 | sed -e s+'^model name\t: '++)
+V_SYSTEM=$(uname -rs)
+V_ARCH=$(uname -m)
+
+[[ "$V_CPUMODEL1" ]] || V_CPUMODEL1="${HW_CPU}"
+
+# battery
+BATT=$(cat /sys/class/power_supply/{BAT,bat}*/uevent 2>/dev/null | grep -E "^POWER_SUPPLY_CAPACITY=" | sed -e s+'^POWER_SUPPLY_CAPACITY='++ | sort -rn | head -1)
+
+# PAD Battery
+for PADBAT in /sys/class/power_supply/*/device/uevent
+do
+    # HID devices only
+    PADNAME=$(grep -E '^HID_NAME=' "${PADBAT}" | sed -e s+'^HID_NAME='++)
+    if test -n "${PADNAME}"
+    then
+	# parent of parent / uevent
+	BATTUEVENT=$(dirname "${PADBAT}")
+	BATTUEVENT=$(dirname "${BATTUEVENT}")/uevent
+	BATT=$(grep -E "^POWER_SUPPLY_CAPACITY=" "${BATTUEVENT}" | sed -e s+'^POWER_SUPPLY_CAPACITY='++ | sort -rn | head -1)
+	echo "${PADNAME}: ${BATT}%"
+    fi
+done
+
+
+case ${HW_ARCH} in
+  aarch64)
+    declare -a CF MF
+
+    CNTR=0
+    for CPUFREQ in /sys/devices/system/cpu/cpufreq/*
+    do
+      if [[ "${CPUFREQ}" =~ boost ]]
+      then
+        continue
+      fi
+      if [ "${CNTR}" -eq 0 ]
+      then
+        CF+=("CURRENT FREQUENCY:")
+        MF+=("MAXIMUM FREQUENCY:")
+      fi
+      RELCPUS=$(cat ${CPUFREQ}/related_cpus)
+      if [ "${#RELCPUS}" -gt 1 ]
+      then
+        FIELD="$(cat ${CPUFREQ}/related_cpus 2>/dev/null | awk '{print $1"-"$NF}')"
+      else
+        FIELD="$(cat ${CPUFREQ}/related_cpus)"
+      fi
+      CF+=("THREADS ${FIELD}: $(( $(cat ${CPUFREQ}/scaling_cur_freq | sort | tail -n 1) / 1000))MHz")
+      MF+=("THREADS ${FIELD}: $(( $(cat ${CPUFREQ}/scaling_max_freq | sort | tail -n 1) / 1000))MHz")
+      CNTR=$(( CNTR + 1 ))
+    done
+  ;;
+esac
+
+# temperature
+# Unit: millidegree Celsius
+if [ -e "${DEVICE_TEMP_SENSOR}" ]
+then
+  TEMPE=$(cat ${DEVICE_TEMP_SENSOR} 2>/dev/null | sort -rn | head -1 | sed -e s+"[0-9][0-9][0-9]$"++)
+fi
+echo "SYSTEM INFORMATION:"
+echo "OPERATING SYSTEM: ${OS_NAME}"
+echo "VERSION: ${OS_VERSION}"
+echo "BUILD ID: ${BUILD_ID:0:7} (${BUILD_BRANCH})"
+echo "KERNEL: ${V_SYSTEM} ($(uname -m))"
+echo "DISK SPACE:"
+echo "/storage: $(df -h /storage | awk '/dev/ {print $3"/"$2" ("$5")"}')"
+echo "/storage/roms: $(df -h /storage/roms | awk '/dev/ {print $3"/"$2" ("$5")"}')"
+
+if test -n "${BATT}"
+then
+    echo "BATTERY INFORMATION:"
+    echo "BATTERY REMAINING: ${BATT}%"
+    BATPATH="/sys/class/power_supply/$(ls /sys/class/power_supply/ | grep -i bat | tail -n 1)"
+    if [ -e "${BATPATH}/health" ]
+    then
+      echo "BATTERY HEALTH: $(cat ${BATPATH}/health)"
+    fi
+    if [ -e "${BATPATH}/status" ]
+    then
+      echo "BATTERY STATE: $(cat ${BATPATH}/status)"
+    fi
+fi
+echo "CPU INFORMATION:"
+echo "CPU: ${V_CPUMODEL1} (${V_CPUNB} Cores)"
+if test -n "${TEMPE}"
+then
+    echo "CPU TEMPERATURE: ${TEMPE}°"
+fi
+if [ "${DEVICE_HAS_FAN}" = "true" ]
+then
+  FANSPEED=$(cat ${DEVICE_PWM_FAN} 2>/dev/null)
+  if [ "${FANSPEED}" = "0" ]
+  then
+    FANSPEED="OFF"
+  else
+    FANSPEED="${FANSPEED} RPM"
+  fi
+  echo "CPU FAN: ${FANSPEED}"
+fi
+case ${HW_ARCH} in
+  aarch64)
+    for C in "${CF[@]}"
+    do
+      echo ${C}
+    done
+    for M in "${MF[@]}"
+    do
+      echo ${M}
+    done
+  ;;
+esac
