@@ -18,8 +18,8 @@ esac
 
 FORCE="$(get_setting updates.force)"
 
-GIT_REPO="https://github.com/${ORGANIZATION}/${PROJECT}"
-GIT_API="https://api.github.com/repos/${ORGANIZATION}/${PROJECT}"
+GIT_REPO="https://github.com/${ORGANIZATION}/${GIT_REPO}"
+GIT_API="https://api.github.com/repos/${ORGANIZATION}/${GIT_REPO}"
 UPDATE_PATH="/storage/.update"
 EXTENSION="tar"
 

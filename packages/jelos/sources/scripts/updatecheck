@@ -15,8 +15,8 @@ case ${BRANCH} in
   ;;
 esac
 
-GIT_REPO="https://github.com/${ORGANIZATION}/${PROJECT}"
-GIT_API="https://api.github.com/repos/${ORGANIZATION}/${PROJECT}"
+GIT_REPO="https://github.com/${ORGANIZATION}/${GIT_REPO}"
+GIT_API="https://api.github.com/repos/${ORGANIZATION}/${GIT_REPO}"
 
 FORCE="$(get_setting updates.force)"
 
