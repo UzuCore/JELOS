@@ -23,9 +23,8 @@ case ${DEVICE} in
     PKG_VERSION="4dbf6b2"
   ;;
   RK332*)
-    PKG_URL="https://github.com/hardkernel/u-boot.git"
-    PKG_VERSION="0e26e35cb18a80005b7de45c95858c86a2f7f41e"
-    PKG_GIT_CLONE_BRANCH="odroidgoA-v2017.09"
+    PKG_URL="${PKG_SITE}/rk3326-uboot.git"
+    PKG_VERSION="120aff9"
   ;;
 esac
 
