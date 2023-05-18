@@ -4,7 +4,6 @@
 
 . /etc/profile
 
-
 ORGANIZATION="${GIT_ORGANIZATION}"
 BRANCH="$(get_setting updates.branch)"
 PROJECT="${GIT_REPO}"
