@@ -3,15 +3,15 @@
 # Copyright (C) 2020 351ELEC team (https://github.com/fewtarius/351ELEC)
 # Copyright (C) 2021 Fewtarius
 
-PKG_NAME="es-theme-art-book-next"
+PKG_NAME="es-theme-art-book-dc"
 PKG_VERSION="65d503bfafab2e1fb4f59329486bdd622bdd26e8"
 PKG_ARCH="any"
 PKG_LICENSE="CUSTOM"
 PKG_SITE="https://github.com/UzuCore/es-theme-art-book-dc"
 PKG_URL="${PKG_SITE}.git"
 GET_HANDLER_SUPPORT="git"
-PKG_SHORTDESC="Art Book Next"
-PKG_LONGDESC="Art Book Next"
+PKG_SHORTDESC="Art Book dc"
+PKG_LONGDESC="Art Book dc"
 PKG_TOOLCHAIN="manual"
 
 makeinstall_target() {
