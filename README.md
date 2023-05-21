@@ -1,19 +1,19 @@
-Just Enough Linux Operating System (JELOS) is an immutable Linux distribution for handheld gaming devices developed by a small community of enthusiasts.  Our goal is to produce an operating system that has the features and capabilities that we need, and to have fun as we develop it.
+Just Enough Linux Operating System (JELOS)는 소규모 매니아 커뮤니티에서 개발한 휴대용 게임 장치용 불변의 리눅스 배포판입니다. 우리의 목표는 우리가 필요로 하는 기능을 갖춘 운영 체제를 만드는 것이며, 개발 과정에서 재미를 느끼는 것입니다.
 
-## Licenses
-JELOS is a Linux distribution that is made up of many open-source components.  Components are provided under their respective licenses.  This distribution includes components licensed for non-commercial use only.
+## 라이선스
+JELOS는 다양한 오픈 소스 구성 요소로 구성된 Linux 배포판입니다. 구성 요소는 각각의 라이선스에 따라 제공됩니다. 이 배포판에는 비상업적 용도로만 라이선스가 부여된 구성 요소가 포함되어 있습니다.
 
-### JELOS Branding
-JELOS branding and images are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+### JELOS 브랜딩
+JELOS 브랜드 및 이미지는 [크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스](https://creativecommons.org/licenses/by-nc-sa/4.0/)에 따라 라이선스가 부여됩니다.
 
-#### You are free to
-* Share — copy and redistribute the material in any medium or format
-* Adapt — remix, transform, and build upon the material
+#### 당신은 자유롭게
+* 공유 - 모든 매체 또는 형식의 자료 복사 및 재배포합니다.
+* 편집 - 자료를 재구성, 변형 및 구축합니다.
 
-#### Under the following terms
-* Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-* NonCommercial — You may not use the material for commercial purposes.
-* ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+#### 다음 약관에 따라
+* 귀속 - 적절한 출처를 표시하고 라이선스 링크를 제공하며 변경이 있었는지 표시해야 합니다. 합리적인 방식으로 표시할 수 있지만, 라이선스 제공자가 귀하 또는 귀하의 사용을 보증하는 것처럼 보이는 방식으로 표시해서는 안 됩니다.
+* 비상업적 - 상업적 목적으로 자료를 사용할 수 없습니다.
+* 동일조건 변경허락 - 자료를 재구성, 변형 또는 구축하는 경우 원본과 동일한 라이선스에 따라 기여한 내용을 배포해야 합니다.
 
 ### JELOS Software
 Copyright 2021-present Fewtarius
