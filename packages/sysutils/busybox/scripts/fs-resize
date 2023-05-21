@@ -63,7 +63,7 @@ if [ -e /storage/.please_resize_me ] ; then
     GAMESSTART="$(echo $(parted -m ${DISK} print all 2>/dev/null | awk 'BEGIN {FS=":"} /^2/ {gsub ("[A-Z]",""); print $3}') + 17 2>/dev/null | bc 2>/dev/null)"
     StartProgress spinner "Creating storage exFAT partition..." "parted -s -a optimal -m ${DISK} mkpart primary ntfs ${GAMESSTART}MB 100% &>/dev/null"
     partprobe &>/dev/null
-    StartProgress spinner "Formatting storage exFAT partition..." "mkfs.fat -F 32 -n GAMES ${DISK}p3 &>/dev/null"
+    StartProgress spinner "Formatting storage exFAT partition..." "mkfs.exfat -n GAMES ${DISK}p3 &>/dev/null"
   fi
 fi
 shutdown -r now &>/dev/null
