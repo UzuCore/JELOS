@@ -52,7 +52,7 @@ if [ -e /storage/.please_resize_me ] ; then
       StartProgress spinner "Checking layout...      " "parted -fs ${DISK} print &>/dev/null"
     fi
 
-    if [ ${HW_DEVICE} != "RK3326" ]; then
+    if [ "${HW_DEVICE}" != "RK3326" ]; then
       StartProgress spinner "Resizing storage partition...   " "parted -s -a optimal -m ${DISK} resizepart ${PARTNUM} 100% &>/dev/null"
       StartProgress spinner "Checking storage file system... " "e2fsck -f -p ${PART} &>/dev/null"
       StartProgress spinner "Resizing storage file system... " "resize2fs ${PART} &>/dev/null"
