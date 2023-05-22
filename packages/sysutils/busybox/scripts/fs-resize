@@ -52,20 +52,20 @@ if [ -e /storage/.please_resize_me ] ; then
       StartProgress spinner "Checking layout...      " "parted -fs ${DISK} print &>/dev/null"
     fi
 
-    #StartProgress spinner "Resizing storage partition...   " "parted -s -a optimal -m ${DISK} resizepart ${PARTNUM} 100% &>/dev/null"
-    #StartProgress spinner "Checking storage file system... " "e2fsck -f -p ${PART} &>/dev/null"
-    #StartProgress spinner "Resizing storage file system... " "resize2fs ${PART} &>/dev/null"
-    #StartProgress countdown "Rebooting in 5s...     " 5 "NOW"
-    
-    StartProgress spinner "Resizing storage partition...   " "parted -s -a optimal -m ${DISK} resizepart 2 4GiB &>/dev/null"
-    StartProgress spinner "Checking storage file system... " "e2fsck -f -p ${PART} &>/dev/null"
-    StartProgress spinner "Resizing storage file system... " "resize2fs ${PART} &>/dev/null"
-    GAMESSTART="$(echo $(parted -m ${DISK} print all 2>/dev/null | awk 'BEGIN {FS=":"} /^2/ {gsub ("[A-Z]",""); print $3}') + 17 2>/dev/null | bc 2>/dev/null)"
-    StartProgress spinner "Creating storage exFAT partition..." "parted -s -a optimal -m ${DISK} mkpart primary ntfs ${GAMESSTART}MB 100% &>/dev/null"
-    partprobe &>/dev/null
-    StartProgress spinner "Formatting storage exFAT partition..." "mkfs.exfat -n GAMES ${DISK}p3 &>/dev/null"
+    if [ ${HW_DEVICE} != "RK3326" ]; then
+      StartProgress spinner "Resizing storage partition...   " "parted -s -a optimal -m ${DISK} resizepart ${PARTNUM} 100% &>/dev/null"
+      StartProgress spinner "Checking storage file system... " "e2fsck -f -p ${PART} &>/dev/null"
+      StartProgress spinner "Resizing storage file system... " "resize2fs ${PART} &>/dev/null"
+    else fi
+      StartProgress spinner "Resizing storage partition...   " "parted -s -a optimal -m ${DISK} resizepart 2 4GiB &>/dev/null"
+      StartProgress spinner "Checking storage file system... " "e2fsck -f -p ${PART} &>/dev/null"
+      StartProgress spinner "Resizing storage file system... " "resize2fs ${PART} &>/dev/null"
+      GAMESSTART="$(echo $(parted -m ${DISK} print all 2>/dev/null | awk 'BEGIN {FS=":"} /^2/ {gsub ("[A-Z]",""); print $3}') + 17 2>/dev/null | bc 2>/dev/null)"
+      StartProgress spinner "Creating storage exFAT partition..." "parted -s -a optimal -m ${DISK} mkpart primary ntfs ${GAMESSTART}MB 100% &>/dev/null"
+      partprobe &>/dev/null
+      StartProgress spinner "Formatting storage exFAT partition..." "mkfs.exfat -n GAMES ${DISK}p3 &>/dev/null"
+    fi
     StartProgress countdown "Rebooting in 5s...     " 5 "NOW"
   fi
 fi
-#shutdown -r now &>/dev/null
-reboot -f &>/dev/null
+shutdown -r now &>/dev/null
