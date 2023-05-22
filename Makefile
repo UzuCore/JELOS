@@ -38,6 +38,10 @@ RK3326:
 	PROJECT=Rockchip DEVICE=RK3326 ARCH=arm ./scripts/build_distro
 	PROJECT=Rockchip DEVICE=RK3326 ARCH=aarch64 ./scripts/build_distro
 
+RK3399:
+	PROJECT=Rockchip DEVICE=RK3399 ARCH=arm ./scripts/build_distro
+	PROJECT=Rockchip DEVICE=RK3399 ARCH=aarch64 ./scripts/build_distro
+
 RK3566:
 	DEVICE_ROOT=RK3566 PROJECT=Rockchip DEVICE=RK3566 ARCH=arm ./scripts/build_distro
 	DEVICE_ROOT=RK3566 PROJECT=Rockchip DEVICE=RK3566 ARCH=aarch64 ./scripts/build_distro
