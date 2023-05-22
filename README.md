@@ -60,7 +60,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 * [Wireguard VPN](https://github.com/JustEnoughLinuxOS/distribution/wiki/WireGuard-VPN)
 
 ## 기여
-* [Developing and Building JELOS](https://github.com/JustEnoughLinuxOS/distribution/blob/dev/BUILDING.md)
+* [Developing and Building JELOS](https://github.com/UzuCore/JELOS/blob/dev/BUILDING.md)
 
 ## 크레딧
 다른 리눅스 배포판과 마찬가지로 이 프로젝트는 한 사람의 작품이 아닙니다. 이 프로젝트가 존재할 수 없는 오픈 소스 비트를 개발한 전 세계 많은 사람들의 노력의 산물입니다. CoreELEC, LibreELEC, 그리고 오픈 소스 커뮤니티의 개발자 및 기여자에게 특별한 감사를 드립니다.
