@@ -38,10 +38,11 @@
     PKG_LOADER="$PKG_RKBIN/bin/rk33/rk3399_miniloader_v1.19.bin"
     PKG_BL31="$PKG_RKBIN/bin/rk33/rk3399_bl31_v1.35.elf"
     BOOT_INI=false
+    EXT_LINUX_CONF=true
 
   # Additional kernel make parameters (for example to specify the u-boot loadaddress)
     KERNEL_MAKE_EXTRACMD=""
-    KERNEL_MAKE_EXTRACMD+=" rockchip/${DEVICE_DTB[0]}.dtb"
+    ERNEL_MAKE_EXTRACMD=" $(for DTB in "${DEVICE_DTB[@]}"; do echo -n "rockchip/${DTB}.dtb "; done)"
    
   # Define the CPU
     HW_CPU="Rockchip RK3399"
