@@ -10,7 +10,7 @@ PKG_TOOLCHAIN="manual"
 PKG_PATCH_DIRS+="${DEVICE}*"
 
 case ${DEVICE} in
-  RK3326|RK3399)
+  RK3326)
     PKG_VERSION="7f77e406fd1644967301bafb6bec71cf3c6cbb05"
     PKG_URL="${PKG_SITE}.git"
   ;;
