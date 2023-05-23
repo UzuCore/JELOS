@@ -1471,7 +1471,7 @@ diff -rupN linux.orig/arch/arm64/configs/rg552_defconfig linux/arch/arm64/config
 +# CONFIG_LOCALVERSION_AUTO is not set
 +CONFIG_BUILD_SALT="-ragnarok"
 +CONFIG_DEFAULT_INIT=""
-+CONFIG_DEFAULT_HOSTNAME="RK3399"
++CONFIG_DEFAULT_HOSTNAME="RG552"
 +# CONFIG_SWAP is not set
 +CONFIG_SYSVIPC=y
 +CONFIG_SYSVIPC_SYSCTL=y
