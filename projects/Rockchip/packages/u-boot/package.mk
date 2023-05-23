@@ -28,8 +28,8 @@ case ${DEVICE} in
     PKG_GIT_CLONE_BRANCH="odroidgoA-v2017.09"
   ;;
   RK339*)
-    PKG_URL="https://github.com/RetroGFX/rk3399-uboot.git"
-    PKG_VERSION="b2b3fa8268"
+    PKG_URL="${PKG_SITE}/rk3399-uboot.git"
+    PKG_VERSION="b2b3fa8268cd5dcceb123b96646384150c4035da"
   ;;
 esac
 

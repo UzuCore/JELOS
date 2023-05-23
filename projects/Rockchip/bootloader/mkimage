@@ -21,7 +21,7 @@ fi
 
 
 case "${PKG_SOC}" in
-  rk35*)
+  rk35*|rk3399)
 	if [ -f "${RELEASE_DIR}/3rdparty/bootloader/u-boot.itb" ]; then
 	  echo "image: burn uboot.itb to image... (${PKG_SOC})"
 	  dd if="${RELEASE_DIR}/3rdparty/bootloader/u-boot.itb" of="${DISK}" bs=512 seek=16384 conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
