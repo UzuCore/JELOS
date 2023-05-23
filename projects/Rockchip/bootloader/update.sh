@@ -87,7 +87,7 @@ echo "UPDATE" > /storage/.config/boot.hint
 
 MYDEV=$(awk '/^Hardware/ {print $4}' /proc/cpuinfo)
 case ${MYDEV} in
-  RK35*|RK3399)
+  RK35*|RK339*)
     IDBSEEK="bs=512 seek=64"
   ;;
   *)
