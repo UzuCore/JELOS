@@ -29,7 +29,7 @@ case ${DEVICE} in
   ;;
   RK339*)
     PKG_URL="${PKG_SITE}/rk3399-uboot.git"
-    PKG_VERSION="b2b3fa8268"
+    PKG_VERSION="b2b3fa8"
   ;;
 esac
 
