@@ -27,6 +27,10 @@ case ${DEVICE} in
     PKG_VERSION="0e26e35cb18a80005b7de45c95858c86a2f7f41e"
     PKG_GIT_CLONE_BRANCH="odroidgoA-v2017.09"
   ;;
+  RK339*)
+    PKG_URL="${PKG_SITE}/rk3399-uboot.git"
+    PKG_VERSION="b2b3fa8268cd5dcceb123b96646384150c4035da"
+  ;;
 esac
 
 PKG_IS_KERNEL_PKG="yes"
