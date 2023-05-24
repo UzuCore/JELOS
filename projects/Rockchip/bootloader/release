@@ -10,7 +10,7 @@ if [ -n "${UBOOT_CONFIG}" ]; then
     cp -a ${BOOTLOADER_DIR}/idbloader.img ${RELEASE_DIR}/3rdparty/bootloader
   fi
   case "${PKG_SOC}" in
-    rk35*)
+    rk35*|rk3399)
       if [ -f ${BOOTLOADER_DIR}/u-boot.itb ]; then
         cp -a ${BOOTLOADER_DIR}/u-boot.itb ${RELEASE_DIR}/3rdparty/bootloader
       fi
