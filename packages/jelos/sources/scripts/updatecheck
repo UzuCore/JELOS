@@ -6,7 +6,14 @@
 
 ORGANIZATION="${GIT_ORGANIZATION}"
 BRANCH="$(get_setting updates.branch)"
-PROJECT="${GIT_REPO}"
+case ${BRANCH} in
+  dev)
+    PROJECT="${GIT_REPO}-dev"
+  ;;
+  *)
+    PROJECT="${GIT_REPO}"
+  ;;
+esac
 
 GIT_REPO="https://github.com/${ORGANIZATION}/${PROJECT}"
 GIT_API="https://api.github.com/repos/${ORGANIZATION}/${PROJECT}"

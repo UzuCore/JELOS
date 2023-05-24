@@ -4,9 +4,17 @@
 
 . /etc/profile
 
+
 ORGANIZATION="${GIT_ORGANIZATION}"
 BRANCH="$(get_setting updates.branch)"
-PROJECT="${GIT_REPO}"
+case ${BRANCH} in
+  dev)
+    PROJECT="${GIT_REPO}-dev"
+  ;;
+  *)
+    PROJECT="${GIT_REPO}"
+  ;;
+esac
 
 FORCE="$(get_setting updates.force)"
 
