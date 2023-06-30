@@ -25,7 +25,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/storage/.config/PortMaster/libs"
 GREP="/storage/.config/PortMaster/grep"
 WGET="/usr/bin/wget"
 LANG=""
-export DIALOGRC=/storage/.config/PortMaster/colorscheme/jelos.dialogrc
+export DIALOGRC=/storage/.config/PortMaster/colorscheme/All_Black.dialogrc
 app_colorscheme="Default"
 mono_version="mono-6.12.0.122-aarch64.squashfs"
 
@@ -66,7 +66,7 @@ if [ -z "$GW" ]; then
 fi
 
 website="https://github.com/PortsMaster/PortMaster-Releases/releases/latest/download/"
-jwebsite="https://github.com/brooksytech/JelosAddOns/releases/latest/download/"
+jwebsite="https://github.com/UzuCore/JelosAddOns/releases/latest/download/"
 isgithubrelease="true" #Github releases convert space " " ("%20") to "."
 
 if [ ! -d "/dev/shm/portmaster" ]; then
@@ -187,11 +187,11 @@ JelosPorts() {
   while true; do
     selection=(dialog \
    	--backtitle "PortMaster" \
-   	--title "[ JelosAddOns Ports]" \
+   	--title "[ Brooksytech Ports]" \
    	--no-collapse \
    	--clear \
 	--cancel-label "Back" \
-    --menu "Available JelosAddOns ports for install" $height $width 15)
+    --menu "Available Brooksytech ports for install" $height $width 15)
 
     choices=$("${selection[@]}" "${options[@]}" 2>&1 > ${CUR_TTY}) || TopLevel
 
@@ -256,7 +256,7 @@ MainMenuRTR() {
 }
 
 TopLevel() {
-  local topoptions=( 1 "All Available Ports" 2 "Ready to Run Ports" 3 "JelosAddOns Ports" )
+  local topoptions=( 1 "All Available Ports" 2 "Ready to Run Ports" 3 "Brooksytech Ports" )
 
   while true; do
     topselection=(dialog \
