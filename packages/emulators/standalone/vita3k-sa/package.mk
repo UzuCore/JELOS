@@ -33,7 +33,8 @@ pre_configure_target() {
    PKG_CMAKE_OPTS_TARGET+=" -DCMAKE_BUILD_TYPE=Release \
                    -DBUILD_SHARED_LIBS=OFF \
                    -DUSE_DISCORD_RICH_PRESENCE=OFF \
-                   -DUSE_VITA3K_UPDATE=OFF"
+                   -DUSE_VITA3K_UPDATE=OFF \
+                   -DXXH_X86DISPATCH_ALLOW_AVX=ON"
 }
 
 makeinstall_target() {
