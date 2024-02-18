@@ -4,7 +4,7 @@
 # Copyright (C) 2021 Fewtarius
 
 PKG_NAME="es-theme-art-book-dc"
-PKG_VERSION="d4406c994e9cb3ccc5b1684e02167385ad4f0f45"
+PKG_VERSION="978cfd74939f9c215c09288f23f7fb441566681c"
 PKG_ARCH="any"
 PKG_LICENSE="CUSTOM"
 PKG_SITE="https://github.com/UzuCore/es-theme-art-book-dc"
