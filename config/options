@@ -15,7 +15,6 @@ fi
 
 # set default language for buildsystem
 export LC_ALL=C
-export TZ='Asia/Seoul'
 
 # set default independent variables
 ROOT="${PWD}"
