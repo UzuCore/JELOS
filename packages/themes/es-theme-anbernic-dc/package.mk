@@ -1,7 +1,7 @@
 #UzuCore
 
 PKG_NAME="es-theme-anbernic-dc"
-PKG_VERSION="b70e9c6368487daa2a6bf8ea7b213043c63b75f6"
+PKG_VERSION="8267fe038c2d63d6d78a6b0f6ec113a3899e161e"
 PKG_ARCH="any"
 PKG_LICENSE="CUSTOM"
 PKG_SITE="https://github.com/UzuCore/es-theme-anbernic-dc"
