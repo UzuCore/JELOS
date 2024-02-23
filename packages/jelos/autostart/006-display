@@ -11,7 +11,7 @@ tocon "Configuring display..."
 BRIGHTNESS=$(get_setting system.brightness)
 if [[ -z ${BRIGHTNESS} ]]
 then
-  BRIGHTNESS="6"
+  BRIGHTNESS="8"
 fi
 
 # Ensure user doesn't get "locked out" with super low brightness
