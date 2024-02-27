@@ -7,7 +7,7 @@
 gptokeyb fileman textinput &
 
 . /etc/profile
-jslisten set "FileMan"
+set_kill set "FileMan"
 
 if [ -e "/sys/firmware/devicetree/base/model" ]
 then
