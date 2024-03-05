@@ -2,7 +2,7 @@
 # Copyright (C) 2022-present JELOS (https://github.com/JustEnoughLinuxOS)
 
 PKG_NAME="ryujinx-sa"
-PKG_VERSION="1.1.999"
+PKG_VERSION="1.1.1217"
 PKG_ARCH="x86_64"
 PKG_LICENSE="MIT"
 PKG_SITE="https://github.com/Ryujinx"
