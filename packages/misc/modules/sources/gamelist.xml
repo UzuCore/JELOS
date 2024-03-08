@@ -180,6 +180,18 @@
         <image>./images/rpcs3.svg</image>
     </game>
     <game>
+        <path>./Start Ryujinx.sh</path>
+        <name>Start Ryujinx</name>
+        <desc>Opens the Ryujinx GUI (Switch) to enable global configuration changes to be made directly to the emulator. It's recommended to have a mouse and keyboard available to modify settings. Ryujinx is an open-source Nintendo Switch emulator created by gdkchan and written in C#. This emulator aims at providing excellent accuracy and performance, a user-friendly interface, and consistent builds.</desc>
+        <developer>JELOS</developer>
+        <publisher>JELOS</publisher>
+        <rating>5.0</rating>
+        <releasedate>2023</releasedate>
+        <genre>Emulator</genre>
+        <players>1</players>
+        <image>./images/ryujinx.svg</image>
+    </game>
+    <game>
         <path>./Start ScummVM.sh</path>
         <name>ScummVM 실행</name>
         <desc>ScummVM GUI를 열어 전역 구성 변경 사항을 에뮬레이터에 직접 적용할 수 있습니다. 설정을 수정하려면 마우스와 키보드를 준비하는 것이 좋습니다. ScummVM은 데이터 파일이 이미 있는 경우 특정 클래식 그래픽 어드벤처 및 롤플레잉 게임을 실행할 수 있게 해주는 프로그램입니다. 이에 대한 영리한 부분은 ScummVM이 게임과 함께 제공된 실행 파일을 대체하므로 해당 실행 파일이 설계된 적이 없는 시스템에서 해당 실행 파일을 재생할 수 있다는 것입니다! ScummVM은 이러한 게임의 실행 파일을 완전히 재작성한 것이며 에뮬레이터가 아닙니다.</desc>
