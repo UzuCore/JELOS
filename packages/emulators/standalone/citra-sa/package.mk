@@ -3,7 +3,7 @@
 
 PKG_NAME="citra-sa"
 PKG_LICENSE="MPLv2"
-PKG_SITE="https://github.com/citra-emu/citra"
+PKG_SITE="https://github.com/UzuCore/citra-mirror"
 PKG_DEPENDS_TARGET="toolchain ffmpeg mesa SDL2 boost zlib libusb boost zstd control-gen"
 PKG_LONGDESC="Citra 3DS emulator"
 PKG_TOOLCHAIN="cmake"
@@ -11,13 +11,9 @@ GET_HANDLER_SUPPORT="git"
 PKG_PATCH_DIRS+="${DEVICE}"
 
 case ${DEVICE} in
-  S922X)
-    PKG_URL="${PKG_SITE}.git"
-    PKG_VERSION="9b2a592"
-  ;;
   *)
     PKG_URL="${PKG_SITE}.git"
-    PKG_VERSION="19784355f935df229feda068c4197ccaf62729ee"
+    PKG_VERSION="bff1018a34be66cf00d4804e74e2095b350cb409"
   ;;
 esac
 
