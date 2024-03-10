@@ -3,7 +3,7 @@
 
 PKG_NAME="citra-sa"
 PKG_LICENSE="MPLv2"
-PKG_SITE="https://github.com/citra-mirror/citra"
+PKG_SITE="https://github.com/PabloMK7/citra"
 PKG_DEPENDS_TARGET="toolchain ffmpeg mesa SDL2 boost zlib libusb boost zstd control-gen"
 PKG_LONGDESC="Citra 3DS emulator"
 PKG_TOOLCHAIN="cmake"
