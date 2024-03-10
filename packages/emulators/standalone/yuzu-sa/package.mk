@@ -2,7 +2,7 @@
 # Copyright (C) 2022-present JELOS (https://github.com/JustEnoughLinuxOS)
 
 PKG_NAME="yuzu-sa"
-PKG_VERSION="191042f63073b86749f0ea7da56828ceccce6d6a"
+PKG_VERSION="ad4ae399033853e6fe45a5e2a0009c614ab199fc"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/UzuCore/yuzu-mirror"
