@@ -29,6 +29,5 @@ makeinstall_target() {
   mkdir -p ${INSTALL}/usr/share/fileman
   cp fileman ${INSTALL}/usr/bin/
   cp -rf res ${INSTALL}/usr/share/fileman/
-  cp ${PKG_DIR}/sources/fileman.rg503 ${INSTALL}/usr/bin/
-  chmod 0755 ${INSTALL}/usr/bin/fileman*
+  chmod 0755 ${INSTALL}/usr/bin/fileman
 }
